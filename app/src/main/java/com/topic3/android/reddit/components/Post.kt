@@ -44,8 +44,11 @@ fun ImagePost(post: PostModel) {
 @Composable
 fun Post(post: PostModel, content: @Composable () -> Unit = {}) {
   Card(shape = MaterialTheme.shapes.large){
-    Column(modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
-    ) {
+    Column(
+      modifier = Modifier.padding(
+        top = 8.dp, bottom = 8.dp
+      )
+    ){
       Header(post)
       Spacer(modifier = Modifier.height(4.dp))
       content.invoke()
@@ -223,10 +226,8 @@ fun VotingAction(
 
 @Composable
 fun ArrowButton(onClickAction: () -> Unit, arrowResourceId: Int) {
-  IconButton(
-    onClick = onClickAction,
-    modifier = Modifier.size(30.dp)
-  ) {
+  IconButton(onClick = onClickAction,
+    modifier = Modifier.size(30.dp)){
     Icon(
       imageVector = ImageVector.vectorResource(arrowResourceId),
       contentDescription = stringResource(id = R.string.upvote),
